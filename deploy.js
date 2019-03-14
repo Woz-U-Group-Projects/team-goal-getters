@@ -22,8 +22,8 @@ function installPM2() {
 // transfers local project to the remote server
 function transferProjectToRemote(failed, successful) {
   return ssh.putDirectory(
-    '../crmmme-app',
-    '/home/ubuntu/crmmme-app',
+    '../team-goal-getters',
+    '/home/ubuntu/team-goal-getters',
     {
       recursive: true,
       concurrency: 1,
@@ -49,7 +49,7 @@ function transferProjectToRemote(failed, successful) {
 // creates a temporary folder on the remote server
 function createRemoteTempFolder() {
   return ssh.execCommand(
-    'rm -rf crmmme-app-temp && mkdir crmmme-app-temp', {
+    'rm -rf team-goal-getters-temp && mkdir team-goal-getters-temp', {
       cwd: '/home/ubuntu'
   });
 }
@@ -65,7 +65,7 @@ function stopRemoteServices() {
 // updates the project source on the server
 function updateRemoteApp() {
   return ssh.execCommand(
-    'cp -r crmmme-app-temp/* crmmme-app/ && rm -rf crmmme-app-temp', {
+    'cp -r team-goal-getters-temp/* team-goal-getters/ && rm -rf team-goal-getters-temp', {
       cwd: '/home/ubuntu'
   });
 }
@@ -73,7 +73,7 @@ function updateRemoteApp() {
 // restart mongodb and node services on the remote server
 function restartRemoteServices() {
   return ssh.execCommand(
-    'cd crmmme-app && sudo service mongod start && pm2 start app.js', {
+    'cd team-goal-getters && sudo service mongod start && pm2 start app.js', {
       cwd: '/home/ubuntu'
   });
 }
@@ -95,7 +95,7 @@ function sshConnect() {
       return installPM2();
     })
     .then(function() {
-      console.log('Creating `crmmme-app-temp` folder.');
+      console.log('Creating `team-goal-getters-temp` folder.');
       return createRemoteTempFolder();
     })
     .then(function(result) {
