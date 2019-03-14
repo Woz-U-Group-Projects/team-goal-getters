@@ -85,7 +85,7 @@ function sshConnect() {
   ssh
     .connect({
       // TODO: ADD YOUR IP ADDRESS BELOW (e.g. '12.34.5.67')
-      host: '54.147.193.93',
+      host: '54.158.233.217',
       username: 'ubuntu',
       privateKey: 'crmmme-app.pem'
     })
