@@ -1,0 +1,11 @@
+<h1>Fruit</h1>
+<ul>
+  <li *ngFor="let fruit of fruits">{{ fruit.name }}</li>
+</ul>
+<input [(ngModel)]="newFruit.name" placeholder="name" /><button
+  (click)="addFruit()"
+>
+  Submit
+</button>
+
+<router-outlet></router-outlet>
