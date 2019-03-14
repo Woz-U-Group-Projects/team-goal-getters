@@ -23,7 +23,7 @@ app.use(cors());
 app.use("/", indexRouter);
 app.use("/fruit", fruitRouter);
 
-var mongoDB = "mongodb://127.0.0.1/database";
+var mongoDB = "mongodb://cgxix:kriki5683@ds113866.mlab.com:13866/crmmm-db";
 mongoose.connect(mongoDB, { useNewUrlParser: true });
 mongoose.Promise = global.Promise;
 var db = mongoose.connection;
