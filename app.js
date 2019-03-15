@@ -7,7 +7,7 @@ var cors = require("cors");
 var mongoose = require("mongoose");
 
 var indexRouter = require("./routes/index");
-var fruitRouter = require("./routes/fruits");
+var followerRouter = require("./routes/followers");
 
 var app = express();
 
@@ -21,7 +21,7 @@ app.use(cookieParser());
 app.use(cors());
 
 app.use("/", indexRouter);
-app.use("/fruit", fruitRouter);
+app.use("/follower", followerRouter);
 
 var mongoDB = "mongodb://cgxix:kriki5683@ds113866.mlab.com:13866/crmmm-db";
 mongoose.connect(mongoDB, { useNewUrlParser: true });
