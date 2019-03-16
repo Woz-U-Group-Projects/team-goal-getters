@@ -1,3 +1,9 @@
+// hightlight & ⌘+f2 the following to rename all occurances:
+// -> team-goal-getters
+// -> crmmme-app.pem
+// -> 54.158.233.217
+// ⌘+s to save update and then run -> node deploy.js (in terminal from local project directory)
+
 var cmd = require('node-cmd');
 var path, node_ssh, ssh, fs;
 fs = require('fs');
@@ -23,7 +29,7 @@ function installPM2() {
 function transferProjectToRemote(failed, successful) {
   return ssh.putDirectory(
     '../team-goal-getters',
-    '/home/ubuntu/team-goal-getters',
+    '/home/ubuntu/team-goal-getters-temp',
     {
       recursive: true,
       concurrency: 1,
@@ -136,7 +142,7 @@ function sshConnect() {
       }
     })
     .then(function() {
-      console.log('Deployment complete');
+      console.log('DEPLOYMENT COMPLETE!');
       process.exit(0);
     })
     .catch(e => {
