@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
-import { FruitService } from "./fruit.service";
-import { Fruit } from "./fruit";
+import { FollowerService } from "./follower.service";
+import { Follower } from "./follower";
 
 @Component({
   selector: "app-root",
@@ -8,22 +8,22 @@ import { Fruit } from "./fruit";
   styleUrls: ["./app.component.css"]
 })
 export class AppComponent implements OnInit {
-  fruits: Fruit[];
-  newFruit: Fruit = new Fruit();
+  followers: Follower[];
+  newFollower: Follower = new Follower();
 
-  getFruit() {
-    this.fruitService.getFruit().subscribe(f => (this.fruits = f));
+  getFollower() {
+    this.followerService.getFollower().subscribe(f => (this.followers = f));
   }
 
-  addFruit() {
-    this.fruitService.addFruit(this.newFruit).subscribe(f => {
-      this.newFruit = new Fruit();
-      this.getFruit();
+  addFollower() {
+    this.followerService.addFollower(this.newFollower).subscribe(f => {
+      this.newFollower = new Follower();
+      this.getFollower();
     });
   }
 
-  constructor(private fruitService: FruitService) {}
+  constructor(private followerService: FollowerService) {}
   ngOnInit() {
-    this.getFruit();
+    this.getFollower();
   }
 }

@@ -1,11 +1,10 @@
-<h1>Fruit</h1>
+<h1>Become a Follower</h1>
 <ul>
-  <li *ngFor="let fruit of fruits">{{ fruit.name }}</li>
+  <li *ngFor="let follower of followers">{{ follower.fname }} {{ follower.lname }} {{ follower.email }}</li>
 </ul>
-<input [(ngModel)]="newFruit.name" placeholder="name" /><button
-  (click)="addFruit()"
->
-  Submit
-</button>
+<input [(ngModel)]="newFollower.fname" placeholder="Enter your first name" />
+<input [(ngModel)]="newFollower.lname" placeholder="Enter your last name" />
+<input [(ngModel)]="newFollower.email" placeholder="Enter your email" />
+<button (click)="addFollower()">Submit</button>
 
 <router-outlet></router-outlet>
