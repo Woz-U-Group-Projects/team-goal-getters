@@ -10,7 +10,7 @@ import { Observable } from "rxjs";
 export class FollowerService {
   constructor(private http: HttpClient) {}
 
-  url: string = "http://localhost:4200/follower/";
+  url: string = "http://localhost:5000/follower/";
 
   getFollower(): Observable<Follower[]> {
     return this.http.get<Follower[]>(this.url);
