@@ -1,6 +1,6 @@
 var express = require("express");
 var router = express.Router();
-let InfluencerModel = require("../models/influencer");
+let InfluencerModel = require("../../models/influencer");
 
 router.get("/", function(req, res, next){
     InfluencerModel.find()
@@ -14,6 +14,7 @@ router.post("/", function(req, res, next){
     newInfluencer.fname = req.body.fname;
     newInfluencer.lname = req.body.lname;
     newInfluencer.email = req.body.email;
+    newInfluencer.password = req.body.password;
     newInfluencer.save()
         .then(influencer => res.json(influencer))
         .catch(error => res.status(400)
