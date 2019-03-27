@@ -7,8 +7,8 @@ import { AppComponent } from './app.component';
 
 
 const routes: Routes = [
-  { path: 'signup', component: InfluencerSignupComponent },
-  { path: 'login', component: InfluencerLoginComponent },
+  { path: 'influencer-signup', component: InfluencerSignupComponent },
+  { path: 'influencer-login', component: InfluencerLoginComponent },
   //{ path: 'follower/:id', component: FollowerDetailComponent },
   { path: 'followers', component: FollowerSignupComponent, data: { title: 'Followers List'}}
 ];

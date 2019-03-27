@@ -1,3 +1,16 @@
-<p>
-  signup-component works!
-</p>
+<div class="container">
+    <h2>Become an Influencer</h2>
+    <form (ngSubmit)="addFollower()" #followerForm="ngForm">
+      <div class="form-group">
+        <label for="fname">First Name:</label>
+        <input type="text" class="form-control" id="fname" required>
+        <label for="lname">Last Name:</label>
+        <input type="text" class="form-control" id="lname" required>
+        <label for="email">Email:</label>
+        <input type="email" class="form-control" id="email" required>
+        <label for="password">Password:</label>
+        <input type="text" class="form-control" id="password" required>
+      </div>
+      <button type="submit" class="btn btn-success" [disabled]="!followerForm.form.valid">Sign Up</button>
+    </form>
+  </div>

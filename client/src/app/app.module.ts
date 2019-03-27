@@ -8,11 +8,12 @@ import { FollowerSignupComponent } from './components/follower-signup/follower-s
 import { FollowerListComponent } from './components/follower-list/follower-list.component';
 import { InfluencerSignupComponent } from './components/influencer-signup/influencer-signup.component';
 import { InfluencerLoginComponent } from './components/influencer-login/influencer-login.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 
 
 @NgModule({
-  declarations: [AppComponent, FollowerSignupComponent, FollowerListComponent, InfluencerSignupComponent, InfluencerLoginComponent],
+  declarations: [AppComponent, FollowerSignupComponent, FollowerListComponent, InfluencerSignupComponent, InfluencerLoginComponent, NavbarComponent],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent]
