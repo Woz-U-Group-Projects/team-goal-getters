@@ -1,16 +1,29 @@
-<div class="container">
-    <h2>Become an Influencer</h2>
-    <form (ngSubmit)="addFollower()" #followerForm="ngForm">
-      <div class="form-group">
-        <label for="fname">First Name:</label>
-        <input type="text" class="form-control" id="fname" required>
-        <label for="lname">Last Name:</label>
-        <input type="text" class="form-control" id="lname" required>
-        <label for="email">Email:</label>
-        <input type="email" class="form-control" id="email" required>
-        <label for="password">Password:</label>
-        <input type="text" class="form-control" id="password" required>
+<div class="container" id="formblock">
+  <h2 class="col-xs-12">Become An Influencer</h2>
+  <form (ngSubmit)="addFollower()" #followerForm="ngForm">
+    <label for="fname"></label>
+      <div class="col-xs-6">
+        <input type="text" class="form-control" id="fname" required placeholder="First Name">
       </div>
-      <button type="submit" class="btn btn-success" [disabled]="!followerForm.form.valid">Sign Up</button>
-    </form>
-  </div>
+    <label for="lname"></label>
+      <div class="col-xs-6">
+        <input type="text" class="form-control" id="lname" required placeholder="Last Name">
+      </div>
+    <label for="email"></label>
+      <div class="col-xs-12">
+        <input type="email" class="form-control" id="email" required placeholder="Email">
+      </div>
+    <label for="password"></label>
+      <div class="col-xs-12">
+        <input type="text" class="form-control" id="password" required placeholder="Password">
+      </div>
+    <label for="password-confirm"></label>
+      <div class="col-xs-12">
+        <input type="text" class="form-control" id="password-confirm" required placeholder="Confirm Password">
+      </div>
+    <div class="col-xs-2">
+      <button type="submit" class="btn" id="submit-btn" [disabled]="!followerForm.form.valid">Sign Up</button>
+    </div>
+    <div class="col-xs-10"></div>
+  </form>
+</div>

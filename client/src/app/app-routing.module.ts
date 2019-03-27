@@ -10,7 +10,7 @@ const routes: Routes = [
   { path: 'influencer-signup', component: InfluencerSignupComponent },
   { path: 'influencer-login', component: InfluencerLoginComponent },
   //{ path: 'follower/:id', component: FollowerDetailComponent },
-  { path: 'followers', component: FollowerSignupComponent, data: { title: 'Followers List'}}
+  { path: 'follower-signup', component: FollowerSignupComponent, data: { title: 'Followers List'}}
 ];
 
 @NgModule({

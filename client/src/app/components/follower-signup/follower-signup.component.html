@@ -1,20 +1,27 @@
-<div class="container">
-  <h2>Become a Follower</h2>
+<div class="container" id="formblock">
+  <h2 class="col-xs-12">Become A Supporter</h2>
   <form (ngSubmit)="addFollower()" #followerForm="ngForm">
-    <div class="form-group">
-      <label for="fname">First Name:</label>
-      <input type="text" class="form-control" id="fname" required>
-      <label for="lname">Last Name:</label>
-      <input type="text" class="form-control" id="lname" required>
-      <label for="email">Email:</label>
-      <input type="email" class="form-control" id="email" required>
+    <label for="fname"></label>
+      <div class="col-xs-6">
+        <input type="text" class="form-control" id="fname" required placeholder="First Name">
+      </div>
+    <label for="lname"></label>
+      <div class="col-xs-6">
+        <input type="text" class="form-control" id="lname" required placeholder="Last Name">
+      </div>
+    <label for="email"></label>
+      <div class="col-xs-12">
+        <input type="email" class="form-control" id="email" required placeholder="Email">
+      </div>
+    <label for="favInfluencer"></label>
+      <div class="col-xs-12">
+        <select class="form-control" id="favInfluencer" required>
+          <option *ngFor="let username of usernames" [value]="username">{{ username }}</option>
+        </select>
+      </div>
+    <div class="col-xs-2">
+      <button type="submit" class="btn" id="submit-btn" [disabled]="!followerForm.form.valid">Sign Up</button>
     </div>
-    <div class="form-group">
-      <label for="favInfluencer">Favorite Influencer:</label>
-      <select class="form-control" id="favInfluencer" required>
-        <option *ngFor="let username of usernames" [value]="username">{{ username }}</option>
-      </select>
-    </div>
-    <button type="submit" class="btn btn-success" [disabled]="!followerForm.form.valid">Submit</button>
+    <div class="col-xs-10"></div>
   </form>
 </div>

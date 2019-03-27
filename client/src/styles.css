@@ -1,4 +1,33 @@
-/* You can add global styles to this file, and also import other style files */
-
 /* Import Bootstrap */
 @import url('https://unpkg.com/bootstrap@3.3.7/dist/css/bootstrap.min.css');
+
+/* You can add global styles to this file, and also import other style files */
+
+/* Global Form Style vvv */
+.form-control{
+    margin-bottom:14px;
+}
+
+#formblock{
+    margin-top: 100px;
+    max-width: 500px;
+    background-color: rgb(65, 64, 66);
+    border-radius: 21px;
+    padding-top: 3px;
+    padding-bottom: 30px;
+}
+
+h2 {
+    color: rgb(54, 224, 175);
+}
+
+#submit-btn {
+    background-color: rgb(54, 224, 175);
+    color: white;
+}
+
+#favInfluencer {
+    color: rgb(54, 224, 175);
+}
+
+/* Global Form Style ^^^ */

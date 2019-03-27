@@ -1,16 +1,23 @@
-<div class="container">
-  <a href="/" class="nav-link"><h1>CRMMME</h1></a>
-  <nav>
-    <h5>Influencer</h5>
-    <a routerLink="/influencer-signup" routerLinkActive="nav-item-active" class="nav-link">Signup</a>
-    <a> / </a>
-    <a routerLink="/influencer-login" routerLinkActive="nav-item-active" class="nav-link">Login</a>
-    <a routerLink="/followers" routerLinkActive="active" class="nav-link"> View Followers </a>
-  </nav>
-  <nav>
-    <h5>Supporter</h5>
-    <a routerLink="/influencer-signup" routerLinkActive="nav-item-active" class="nav-link">Signup</a>
-    <a> / </a>
-    <a routerLink="/influencer-login" routerLinkActive="nav-item-active" class="nav-link">Login</a>
-  </nav>
+<div class="container" id="navblock">
+  <a href="/"><img class="col-xs-2" id="logo" src="../../../assets/images/CrmmmbConGreen.png"/></a>
+  <div class="col-xs-10" id="navbtns">
+    <a href="/" class="nav-link"><h1>CRMMME</h1></a>
+    <div display="inline-block">
+      <nav>
+        <h4>Influencer: 
+        <a routerLink="/influencer-signup" routerLinkActive="nav-item-active" class="nav-link">Sign Up</a>
+        <a> | </a>
+        <a routerLink="/influencer-login" routerLinkActive="nav-item-active" class="nav-link">Login</a>
+        </h4>
+        <!-- <a routerLink="/followers" routerLinkActive="active" class="nav-link"> View Followers </a> -->
+      </nav>
+      <nav>
+        <h4>Supporter: 
+        <a routerLink="/follower-signup" routerLinkActive="nav-item-active" class="nav-link">Sign Up</a>
+        <!-- <a> | </a> -->
+        <!-- <a routerLink="/influencer-login" routerLinkActive="nav-item-active" class="nav-link">Login</a> -->
+        </h4>
+      </nav>
+    </div>
+  </div>
 </div>

@@ -9,7 +9,7 @@ import { FollowerService } from '../../follower.service';
 })
 export class FollowerSignupComponent implements OnInit {
 
-usernames = ['Cgxix', 'Karthik', 'Ziiiro', 'Melissa'];
+usernames = ['Favorite Influencer "Choose One"', 'Cgxix', 'Karthik', 'Ziiiro', 'Melissa', 'Jerquan'];
 submitted = false;
 newFollower: Follower = new Follower();
 
