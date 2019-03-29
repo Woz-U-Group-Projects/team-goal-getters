@@ -7,7 +7,6 @@ import { AppComponent } from "./app.component";
 import { FollowerFormComponent } from './components/follower-form/follower-form.component';
 import { FollowerListComponent } from './components/follower-list/follower-list.component';
 
-
 @NgModule({
   declarations: [AppComponent, FollowerFormComponent, FollowerListComponent],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
