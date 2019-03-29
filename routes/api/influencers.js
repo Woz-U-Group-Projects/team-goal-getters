@@ -1,6 +1,8 @@
 var express = require("express");
 var router = express.Router();
 let InfluencerModel = require("../../models/influencer");
+const passport = require('passport');
+const connectEnsure = require('connect-ensure-login');
 
 router.get("/", function(req, res, next){
     InfluencerModel.find()

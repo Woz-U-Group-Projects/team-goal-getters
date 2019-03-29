@@ -5,6 +5,8 @@ var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 var cors = require("cors");
 var mongoose = require("mongoose");
+var models = require('./models');
+const passport = require('passport');
 
 var indexRouter = require("./routes/api/index");
 var followerRouter = require("./routes/api/followers");
