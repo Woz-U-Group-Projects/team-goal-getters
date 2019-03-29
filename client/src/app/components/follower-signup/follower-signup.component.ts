@@ -3,13 +3,13 @@ import { Follower } from '../../follower';
 import { FollowerService } from '../../follower.service';
 
 @Component({
-  selector: 'app-follower-form',
-  templateUrl: './follower-form.component.html',
-  styleUrls: ['./follower-form.component.css']
+  selector: 'app-follower-signup',
+  templateUrl: './follower-signup.component.html',
+  styleUrls: ['./follower-signup.component.css']
 })
-export class FollowerFormComponent implements OnInit {
+export class FollowerSignupComponent implements OnInit {
 
-usernames = ['Cgxix', 'Karthik', 'Ziiiro', 'Melissa'];
+usernames = ['Favorite Influencer "Choose One"', 'Cgxix', 'Karthik', 'Ziiiro', 'Melissa', 'Jerquan'];
 submitted = false;
 newFollower: Follower = new Follower();
 

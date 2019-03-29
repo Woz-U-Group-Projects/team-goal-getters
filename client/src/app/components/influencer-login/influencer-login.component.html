@@ -1,0 +1,17 @@
+<div class="container" id="formblock">
+    <h2 class="col-xs-12">Influencer Login</h2>
+    <form (ngSubmit)="addFollower()" #followerForm="ngForm">
+      <label for="email"></label>
+        <div class="col-xs-12">
+          <input type="email" class="form-control" id="email" required placeholder="Email">
+        </div>
+      <label for="password"></label>
+        <div class="col-xs-12">
+          <input type="text" class="form-control" id="password" required placeholder="Password">
+        </div>
+      <div class="col-xs-2">
+        <button type="submit" class="btn" id="submit-btn" [disabled]="!followerForm.form.valid">Login</button>
+      </div>
+      <div class="col-xs-10"></div>
+    </form>
+  </div>
