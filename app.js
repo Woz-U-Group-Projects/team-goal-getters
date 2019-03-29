@@ -6,13 +6,14 @@ var logger = require("morgan");
 var cors = require("cors");
 var mongoose = require("mongoose");
 
-var indexRouter = require("./routes/index");
-var followerRouter = require("./routes/followers");
+var indexRouter = require("./routes/api/index");
+var followerRouter = require("./routes/api/followers");
+var influencerRouter = require("./routes/api/influencers");
 
 var app = express();
 
 // serve the react application
-//app.use(express.static(path.join(__dirname, "client/build")));
+app.use(express.static(path.join(__dirname, "client/build")));
 
 app.use(logger("dev"));
 app.use(express.json());
@@ -21,7 +22,8 @@ app.use(cookieParser());
 app.use(cors());
 
 app.use("/", indexRouter);
-app.use("/follower", followerRouter);
+app.use("/api/follower", followerRouter);
+app.use("/api/influencer", influencerRouter);
 
 var mongoDB = "mongodb://cgxix:kriki5683@ds113866.mlab.com:13866/crmmm-db";
 mongoose.connect(mongoDB, { useNewUrlParser: true });

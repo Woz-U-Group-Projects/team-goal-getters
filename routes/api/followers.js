@@ -1,6 +1,6 @@
 var express = require("express");
 var router = express.Router();
-let FollowerModel = require("../models/follower");
+let FollowerModel = require("../../models/follower");
 
 router.get("/", function(req, res, next) {
   FollowerModel.find()
