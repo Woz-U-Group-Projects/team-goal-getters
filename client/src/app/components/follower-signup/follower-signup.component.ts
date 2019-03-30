@@ -12,11 +12,10 @@ export class FollowerSignupComponent implements OnInit {
 usernames = ['Favorite Influencer "Choose One"', 'Cgxix', 'Karthik', 'Ziiiro', 'Melissa', 'Jerquan'];
 submitted = false;
 newFollower: Follower = new Follower();
+followers: Follower[];
 
-constructor(private followerService: FollowerService) { }
-
-ngOnInit() {
-
+getFollower() {
+  this.followerService.getFollower().subscribe(f => (this.followers = f));
 }
 
 addFollower() {
@@ -25,5 +24,10 @@ addFollower() {
   });
 }
 
+constructor(private followerService: FollowerService) { }
+
+ngOnInit() {
+  this.getFollower();
+  }
 }
 

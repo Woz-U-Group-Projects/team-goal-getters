@@ -14,13 +14,13 @@ const httpOptions = {
 })
 export class FollowerService {
   
-  private followersUrl = 'http://localhost:5000/api/follower';  // URL to web api
+  private followersUrl = 'http://localhost:5000/api/followers';  // URL to web api
   
   constructor(
     private http: HttpClient) { }
 
   // Get followers from the server  
-  getFollowers(): Observable<Follower[]> {
+  getFollower(): Observable<Follower[]> {
     return this.http.get<Follower[]>(this.followersUrl);
   }
   // Add followers
