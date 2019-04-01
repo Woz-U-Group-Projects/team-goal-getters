@@ -17,6 +17,7 @@ router.post("/", function(req, res, next){
     newInfluencer.lname = req.body.lname;
     newInfluencer.email = req.body.email;
     newInfluencer.password = req.body.password;
+    newInfluencer.username = req.body.username;
     newInfluencer.save()
         .then(influencer => res.json(influencer))
         .catch(error => res.status(400)

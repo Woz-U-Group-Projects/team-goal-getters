@@ -13,12 +13,14 @@
       <div class="col-xs-12">
         <input type="email" class="form-control" id="email" required placeholder="Email">
       </div>
+      <!-- REMOVED TEMPORARILY TO TEST SUBMISSION
     <label for="favInfluencer"></label>
       <div class="col-xs-12">
         <select class="form-control" id="favInfluencer" required>
           <option *ngFor="let username of usernames" [value]="username">{{ username }}</option>
         </select>
       </div>
+      -->
     <div class="col-xs-2">
       <button type="submit" class="btn" id="submit-btn" [disabled]="!followerForm.form.valid">Sign Up</button>
     </div>
