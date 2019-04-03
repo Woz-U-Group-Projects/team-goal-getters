@@ -1,7 +1,6 @@
 ### MEAN
 
-**M**ongo **E**xpress **A**ngular **N**odecool beans
-Christian is neat
+**M**ongo **E**xpress **A**ngular **N**ode
 
 ### How to get a copy of the code
 
