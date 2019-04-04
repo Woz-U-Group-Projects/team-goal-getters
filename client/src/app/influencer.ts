@@ -1,12 +1,10 @@
 export class Influencer {
 
-    constructor(
-        private id: number,
-        private fname: string,
-        private lname: string,
-        public username: string,
-        private email: string,
-        private password: string,
-      ) { }
+        id: number;
+        fname: string;
+        lname: string;
+        username: string;
+        email: string;
+        password: string;
 
 }

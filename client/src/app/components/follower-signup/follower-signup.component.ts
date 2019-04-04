@@ -1,23 +1,18 @@
 import { Component, OnInit } from '@angular/core';
-import { Follower } from '../../follower';
 import { FollowerService } from '../../follower.service';
+import { Follower } from '../../follower';
 
 @Component({
   selector: 'app-follower-signup',
   templateUrl: './follower-signup.component.html',
   styleUrls: ['./follower-signup.component.css']
 })
-export class FollowerSignupComponent implements OnInit {
+export class FollowerSignup implements OnInit {
 
-usernames = ['Favorite Influencer "Choose One"', 'Cgxix', 'Karthik', 'Ziiiro', 'Melissa', 'Jerquan'];
-submitted = false;
+// usernames = ['Favorite Influencer "Choose One"', 'Cgxix', 'Karthik', 'Ziiiro', 'Melissa', 'Jerquan'];
+// submitted = false;
+followers: Follower[];
 newFollower: Follower = new Follower();
-
-constructor(private followerService: FollowerService) { }
-
-ngOnInit() {
-
-}
 
 addFollower() {
   this.followerService.addFollower(this.newFollower).subscribe(f => {
@@ -25,5 +20,9 @@ addFollower() {
   });
 }
 
+constructor(private followerService: FollowerService) { }
+
+ngOnInit() {
+  }
 }
 

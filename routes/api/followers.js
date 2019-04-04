@@ -14,7 +14,10 @@ router.post("/", function(req, res, next) {
   newFollower.fname = req.body.fname;
   newFollower.lname = req.body.lname;
   newFollower.email = req.body.email;
-  newFollower.save().then(follower => res.json(follower)).catch(error => res.status(400).send(error));
+  newFollower
+    .save()
+    .then(follower => res.json(follower))
+    .catch(error => res.status(400).send(error));
 });
 
 module.exports = router;
