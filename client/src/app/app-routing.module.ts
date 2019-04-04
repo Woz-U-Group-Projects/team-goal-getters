@@ -1,16 +1,16 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { FollowerSignupComponent } from './components/follower-signup/follower-signup.component';
-import { InfluencerSignupComponent } from './components/influencer-signup/influencer-signup.component';
+import { FollowerSignup } from './components/follower-signup/follower-signup.component';
+import { InfluencerSignup } from './components/influencer-signup/influencer-signup.component';
 import { InfluencerLoginComponent } from './components/influencer-login/influencer-login.component';
 import { AppComponent } from './app.component';
 
 
 const routes: Routes = [
-  { path: 'influencer-signup', component: InfluencerSignupComponent },
+  { path: 'influencer-signup', component: InfluencerSignup },
   { path: 'influencer-login', component: InfluencerLoginComponent },
   //{ path: 'follower/:id', component: FollowerDetailComponent },
-  { path: 'follower-signup', component: FollowerSignupComponent, data: { title: 'Followers List'}}
+  { path: 'follower-signup', component: FollowerSignup, data: { title: 'Followers List'}}
 ];
 
 @NgModule({

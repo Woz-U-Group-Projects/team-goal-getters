@@ -1,27 +1,24 @@
 <div class="container" id="formblock">
   <h2 class="col-xs-12">Become A Supporter</h2>
-  <form (ngSubmit)="addFollower()" #followerForm="ngForm">
-    <label for="fname"></label>
       <div class="col-xs-6">
-        <input type="text" class="form-control" id="fname" required placeholder="First Name">
+        <input [(ngModel)]="newFollower.fname" class="form-control" required placeholder="First Name">
       </div>
-    <label for="lname"></label>
       <div class="col-xs-6">
-        <input type="text" class="form-control" id="lname" required placeholder="Last Name">
+        <input [(ngModel)]="newFollower.lname" class="form-control" required placeholder="Last Name">
       </div>
-    <label for="email"></label>
       <div class="col-xs-12">
-        <input type="email" class="form-control" id="email" required placeholder="Email">
+        <input [(ngModel)]="newFollower.email" class="form-control" required placeholder="Email">
       </div>
+      <!-- REMOVED TEMPORARILY TO TEST SUBMISSION
     <label for="favInfluencer"></label>
       <div class="col-xs-12">
         <select class="form-control" id="favInfluencer" required>
           <option *ngFor="let username of usernames" [value]="username">{{ username }}</option>
         </select>
       </div>
+      -->
     <div class="col-xs-2">
-      <button type="submit" class="btn" id="submit-btn" [disabled]="!followerForm.form.valid">Sign Up</button>
+      <button type="submit" class="btn" id="submit-btn" (click)="addFollower()">Sign Up</button>
     </div>
     <div class="col-xs-10"></div>
-  </form>
 </div>
