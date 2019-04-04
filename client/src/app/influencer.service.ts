@@ -10,7 +10,7 @@ import { Observable } from "rxjs";
 export class InfluencerService {
   constructor(private http: HttpClient) {}
 
-  url: string = "http://localhost:5000/";
+  url: string = "http://localhost:5000/api/influencers";
 
   getInfluencers(): Observable<Influencer[]> {
     return this.http.get<Influencer[]>(this.url);

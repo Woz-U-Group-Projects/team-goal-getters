@@ -10,6 +10,7 @@ router.get("/", function(req, res, next){
         .catch(error => res.status(500).send(error));
 });
 
+// New Influencer Sign up
 router.post("/", function(req, res, next){
     console.log(req.body);
     let newInfluencer = new InfluencerModel();
