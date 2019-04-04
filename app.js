@@ -5,8 +5,6 @@ var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 var cors = require("cors");
 var mongoose = require("mongoose");
-var models = require('./models');
-const passport = require('passport');
 
 var indexRouter = require("./routes/api/index");
 var followerRouter = require("./routes/api/followers");
@@ -17,7 +15,7 @@ require('./config/passport.js');
 var app = express();
 
 // serve the react application
-app.use(express.static(path.join(__dirname, "client/build")));
+// app.use(express.static(path.join(__dirname, "client/build")));
 
 app.use(logger("dev"));
 app.use(express.json());
@@ -37,8 +35,8 @@ passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
 app.use("/", indexRouter);
-app.use("/api/follower", followerRouter);
-app.use("/api/influencer", influencerRouter);
+app.use("/api/followers", followerRouter);
+app.use("/influencers", influencerRouter);
 
 var mongoDB = "mongodb://cgxix:kriki5683@ds113866.mlab.com:13866/crmmm-db";
 mongoose.connect(mongoDB, { useNewUrlParser: true });
