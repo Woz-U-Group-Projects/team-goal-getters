@@ -48,3 +48,4 @@ node_modules/
 package-lock.json
 
 crmmme-app.pem
+crmmmekey.pem
