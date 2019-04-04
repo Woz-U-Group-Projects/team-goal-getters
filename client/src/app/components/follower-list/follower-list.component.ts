@@ -8,17 +8,17 @@ import { Follower } from 'src/app/follower';
   styleUrls: ['./follower-list.component.css']
 })
 export class FollowerListComponent implements OnInit {
-  
+
   followers: Follower[] = [];
 
   constructor(private followerService: FollowerService) { }
-  
+
   ngOnInit() {
     this.getFollowers();
   }
 
   getFollowers(): void {
     this.followerService.getFollowers()
-      .subscribe(followers => this.followers = followers)
+      .subscribe(followers => this.followers = followers);
   }
 }

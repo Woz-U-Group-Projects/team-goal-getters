@@ -12,6 +12,8 @@ var indexRouter = require("./routes/api/index");
 var followerRouter = require("./routes/api/followers");
 var influencerRouter = require("./routes/api/influencers");
 
+require('./config/passport.js');
+
 var app = express();
 
 // serve the react application
@@ -22,6 +24,17 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(cors());
+
+// add below code here
+app.use(require('express-session')({
+  secret: 'crmmme',
+}));
+app.use(passport.initialize());
+app.use(passport.session());
+
+passport.use(new LocalStrategy(User.authenticate()));
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
 
 app.use("/", indexRouter);
 app.use("/api/follower", followerRouter);
