@@ -13,7 +13,7 @@ var influencerRouter = require("./routes/api/influencers");
 var app = express();
 
 // serve the react application
-// app.use(express.static(path.join(__dirname, "client/build")));
+app.use(express.static(path.join(__dirname, "client/build")));
 
 app.use(logger("dev"));
 app.use(express.json());
