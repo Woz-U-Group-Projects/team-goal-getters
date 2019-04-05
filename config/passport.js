@@ -6,13 +6,13 @@ const bcrypt = require('bcrypt');
 passport.use(
     'local',
     new LocalStrategy(function(username, password, done) {
-      models.influencers
+      models.influencer
         .findOne({
           where: {
             Username: username
           }
         })
-        .then(influence => {
+        .then(influencer => {
           if (!influencer) {
             console.log('not influencer');
             return done(null, false, {
@@ -41,7 +41,7 @@ passport.use(
   });
   
   passport.deserializeUser((id, cb) => {
-    models.influencers
+    models.influencer
       .findOne({
         where: {
           UserId: id
