@@ -1,7 +1,7 @@
 // hightlight & ⌘+f2 the following to rename all occurances:
 // -> team-goal-getters
-// -> crmmme-app.pem
-// -> 54.158.233.217
+// -> crmmmekey.pem
+// -> 35.174.18.190
 // ⌘+s to save update and then run -> node deploy.js (in terminal from local project directory)
 
 var cmd = require('node-cmd');
@@ -91,9 +91,9 @@ function sshConnect() {
   ssh
     .connect({
       // TODO: ADD YOUR IP ADDRESS BELOW (e.g. '12.34.5.67')
-      host: '54.158.233.217',
+      host: '35.174.18.190',
       username: 'ubuntu',
-      privateKey: 'crmmme-app.pem'
+      privateKey: 'crmmmekey.pem'
     })
     .then(function() {
       console.log('SSH Connection established.');
