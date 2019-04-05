@@ -23,7 +23,7 @@ app.use(cors());
 
 app.use("/", indexRouter);
 app.use("/api/followers", followerRouter);
-app.use("/influencers", influencerRouter);
+app.use("/api/influencers", influencerRouter);
 
 var mongoDB = "mongodb://cgxix:kriki5683@ds113866.mlab.com:13866/crmmm-db";
 mongoose.connect(mongoDB, { useNewUrlParser: true });
