@@ -25,7 +25,7 @@ router.post("/", function(req, res, next){
         .send(error));
 });
 
-// get route for username
+// get route for user's dashboard
 
 router.get("/:username", function(req, res) {
  // display the influencer's dashboard which consists of
