@@ -9,10 +9,11 @@ import { FollowerList } from './components/follower-list/follower-list.component
 import { InfluencerSignup } from './components/influencer-signup/influencer-signup.component';
 import { InfluencerLoginComponent } from './components/influencer-login/influencer-login.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { InfluencerDashboardComponent } from './components/influencer-dashboard/influencer-dashboard.component';
 
 
 @NgModule({
-  declarations: [AppComponent, FollowerSignup, FollowerList, InfluencerSignup, InfluencerLoginComponent, NavbarComponent],
+  declarations: [AppComponent, FollowerSignup, FollowerList, InfluencerSignup, InfluencerLoginComponent, NavbarComponent, InfluencerDashboardComponent],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent]
