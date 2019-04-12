@@ -3,7 +3,7 @@ var router = express.Router();
 var InfluencerModel = require("../../models/influencer");
 var bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
-const authService = require("../services/auth");
+const authService = require("../../services/auth");
 
 router.get("/", function(req, res, next){
     InfluencerModel.find()
