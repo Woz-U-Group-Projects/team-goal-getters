@@ -10,6 +10,7 @@
     "seed": "cd seed && mongoimport --db database --collection fruits --drop --file data.json --jsonArray"
   },
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "connect-ensure-login": "^0.1.1",
     "cookie-parser": "~1.4.3",
     "cors": "^2.8.5",
@@ -17,6 +18,7 @@
     "express": "~4.16.0",
     "express-session": "^1.15.6",
     "http-errors": "~1.6.2",
+    "jsonwebtoken": "^8.5.1",
     "mongodb": "^3.1.13",
     "mongoose": "^5.4.9",
     "morgan": "~1.9.0",
