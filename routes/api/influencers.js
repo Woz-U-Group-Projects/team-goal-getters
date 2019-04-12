@@ -48,7 +48,7 @@ router.post("/login", function(req, res) {
           bcrypt.compareSync(req.body.password, influencerInfo.password)
         ) {
           let token = jwt.sign(
-            { id: influencerInfo._id, userName: userInfo.username },
+            { id: influencerInfo._id, userName: influencerInfo.username },
             "secretkey",
             { expiresIn: "1h" }
           );
@@ -68,7 +68,7 @@ router.post("/login", function(req, res) {
 router.get("/dashboard", authService.verifyUser, function(req, res, next) {
     // authService.verifyUser attaches req.body.userId from the jtw cookie if it's valid
     // find the user by their id
-    UserModel.findById(req.body.userId, function(err, influencerInfo) {
+    UserModel.findById(req.body.id, function(err, influencerInfo) {
       if (err) {
         console.log(err);
         res.json("Invalid credentials");
