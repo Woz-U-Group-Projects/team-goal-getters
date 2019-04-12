@@ -1,5 +1,6 @@
 var mongoose = require("mongoose");
 var bcrypt = require("bcryptjs");
+var Schema = mongoose.Schema;
 
 var InfluencerSchema = new Schema({
   firstName: { type: String, required: true },
