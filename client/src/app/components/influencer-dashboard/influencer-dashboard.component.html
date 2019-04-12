@@ -1,28 +1,10 @@
-<div class="container" id="formblock">
-    <h2 class="col-xs-12">"Usernames" Supporters</h2>
-        <!-- <div class="col-xs-6">
-          <input [(ngModel)]="newFollower.fname" class="form-control" required placeholder="First Name">
-        </div>
-        <div class="col-xs-6">
-          <input [(ngModel)]="newFollower.lname" class="form-control" required placeholder="Last Name">
-        </div>
-        <div class="col-xs-12">
-          <input [(ngModel)]="newFollower.email" class="form-control" required placeholder="Email">
-        </div> -->
+<div class="container">
+    <h1>Hello {{ influencer.firstName }}, welcome to your dashboard.</h1>
 
-        <!-- REMOVED TEMPORARILY TO TEST SUBMISSION
-      <label for="favInfluencer"></label>
-        <div class="col-xs-12">
-          <select class="form-control" id="favInfluencer" required>
-            <option *ngFor="let username of usernames" [value]="username">{{ username }}</option>
-          </select>
-        </div>
-        -->
+    <h4>Your account info:</h4>
+    <ul>
+      <li>Username: {{ influencer.username }}</li>
+      <li>Email: {{ influencer.email }}</li>
+    </ul>
 
-      <!-- <div class="col-xs-2">
-        <button type="submit" class="btn" id="submit-btn" (click)="addFollower()">Sign Up</button>
-      </div> -->
-      <div class="col-xs-10">
-        <p style="color:aliceblue">To Be Continued...</p>
-      </div>
-  </div>
+</div>

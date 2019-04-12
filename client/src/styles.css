@@ -4,8 +4,12 @@
 /* You can add global styles to this file, and also import other style files */
 
 /* Global Form Style vvv */
-.form-control{
-    margin-bottom:14px;
+
+.form-control {
+    background-color: #333;
+    color: #ccc;
+    border: 1px solid rgba(0,0,0,0.14);
+    margin-bottom: 14px;
 }
 
 #formblock{
