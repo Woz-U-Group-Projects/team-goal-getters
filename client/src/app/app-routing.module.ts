@@ -8,10 +8,10 @@ import { AppComponent } from './app.component';
 
 
 const routes: Routes = [
-  { path: 'influencer-signup', component: InfluencerSignup },
-  { path: 'influencer-login', component: InfluencerLogin },
-  { path: 'influencer-dashboard', component: InfluencerDashboard },
-  { path: 'follower-signup', component: FollowerSignup, data: { title: 'Followers List'}}
+  { path: 'signup', component: InfluencerSignup },
+  { path: 'login', component: InfluencerLogin },
+  { path: 'dashboard', component: InfluencerDashboard },
+  // { path: 'follower-signup', component: FollowerSignup, data: { title: 'Followers List'}}
 ];
 
 @NgModule({

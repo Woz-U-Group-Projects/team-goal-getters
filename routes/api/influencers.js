@@ -48,7 +48,7 @@ router.post("/login", function(req, res) {
           bcrypt.compareSync(req.body.password, influencerInfo.password)
         ) {
           let token = jwt.sign(
-            { id: influencerInfo._id, userName: influencerInfo.username },
+            { id: influencerInfo.id, userName: influencerInfo.username },
             "secretkey",
             { expiresIn: "1h" }
           );

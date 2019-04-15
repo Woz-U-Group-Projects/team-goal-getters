@@ -16,7 +16,7 @@ var authService = {
         if (err) {
           res.json({ status: "error", message: err.message, data: null });
         } else {
-          req.body.userId = decoded.id;
+          req.body.id = decoded.id;
           next();
         }
       });

@@ -33,7 +33,7 @@ export class InfluencerService {
   // get an influencer profile, must .subscribe() to trigger
   // GET baseurl/u
   getProfile(): Observable<Influencer> {
-    return this.http.get<Influencer>(this.url + "u", this.options);
+    return this.http.get<Influencer>(this.url + "dashboard", this.options);
   }
 
   // logout, must .subscribe() to trigger

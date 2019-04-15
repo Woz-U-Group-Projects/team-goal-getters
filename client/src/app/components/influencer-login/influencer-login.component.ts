@@ -21,7 +21,7 @@ login(): void {
         // set the user to logged in
         this.influencerService.loggedIn = true;
         // send to the profile page
-        this.router.navigate(["/u"]);
+        this.router.navigate(["/dashboard"]);
       });
     },
     err => {
