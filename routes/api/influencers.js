@@ -68,7 +68,7 @@ router.post("/login", function(req, res) {
 router.get("/dashboard", authService.verifyUser, function(req, res, next) {
     // authService.verifyUser attaches req.body.userId from the jtw cookie if it's valid
     // find the user by their id
-    UserModel.findById(req.body.id, function(err, influencerInfo) {
+    InfluencerModel.findById(req.body.id, function(err, influencerInfo) {
       if (err) {
         console.log(err);
         res.json("Invalid credentials");
