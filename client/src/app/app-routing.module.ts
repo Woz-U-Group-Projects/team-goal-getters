@@ -11,6 +11,8 @@ const routes: Routes = [
   { path: 'signup', component: InfluencerSignup },
   { path: 'login', component: InfluencerLogin },
   { path: 'dashboard', component: InfluencerDashboard },
+  { path: '', component: FollowerSignup }
+  
   // { path: 'follower-signup', component: FollowerSignup, data: { title: 'Followers List'}}
 ];
 

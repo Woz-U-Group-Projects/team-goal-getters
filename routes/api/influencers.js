@@ -113,16 +113,16 @@ router.post("/login", function(req, res) {
     }
 }); */
 
-/* get route for user's dashboard
+// get route for user's dashboard
 
 router.get("/:username", function(req, res) {
  // display the influencer's dashboard which consists of
  // a list of followers
 
  let influencerUsername = req.params.username;
- res.send(`Welcome to your dashboard, ${influencerUsername}!`)
+ res.send('Success')
 
 
-}); */
+});
 
 module.exports = router;
