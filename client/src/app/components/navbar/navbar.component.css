@@ -22,3 +22,11 @@ h4 {
 a {
     color: rgb(54, 224, 175);
 }
+
+.nav-link {
+    margin-right: 15px;
+}
+
+.logout {
+    color: orangered;
+}

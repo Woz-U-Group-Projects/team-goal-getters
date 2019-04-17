@@ -1,25 +1,36 @@
 <div class="container" id="navblock">
   <a href="/"><img class="col-xs-2" id="logo" src="../../../assets/images/CrmmmbConGreen.png"/></a>
   <div class="col-xs-10" id="navbtns">
-    <a href="/" class="nav-link"><h1>CRMMME</h1></a>
+    <a routerLink="/" class="nav-link"><h1>CRMMME</h1></a>
     <div display="inline-block">
       <nav>
-        <h4>Influencer: 
-        <a routerLink="/influencer-signup" routerLinkActive="nav-item-active" class="nav-link">Sign Up</a>
-        <a> | </a>
-        <a routerLink="/influencer-login" routerLinkActive="nav-item-active" class="nav-link">Login</a>
-        <a> | </a>
-        <a routerLink="/influencer-dashboard" routerLinkActive="nav-item-active" class="nav-link">Dashboard</a>
+        <h4>
+        <a 
+        *ngIf="!influencerService.loggedIn"
+        routerLink="/signup" routerLinkActive="nav-item-active" class="nav-link">Become an Influencer</a>
+        <a 
+        *ngIf="!influencerService.loggedIn"
+        routerLink="/login" routerLinkActive="nav-item-active" class="nav-link">Login</a>
+        <a 
+        *ngIf="influencerService.loggedIn"
+        routerLink="/dashboard" routerLinkActive="nav-item-active" class="nav-link">Dashboard</a>
+        <a 
+        *ngIf="influencerService.loggedIn"
+        href=""
+        (click)="logout()" routerLinkActive="nav-item-active" class="nav-link logout">Logout</a>
+
         </h4>
         <!-- <a routerLink="/followers" routerLinkActive="active" class="nav-link"> View Followers </a> -->
       </nav>
-      <nav>
+      <!-- 
+        <nav>
         <h4>Supporter: 
         <a routerLink="/follower-signup" routerLinkActive="nav-item-active" class="nav-link">Sign Up</a>
-        <!-- <a> | </a> -->
-        <!-- <a routerLink="/influencer-login" routerLinkActive="nav-item-active" class="nav-link">Login</a> -->
-        </h4>
-      </nav>
+        <a> | </a>
+        <a routerLink="/influencer-login" routerLinkActive="nav-item-active" class="nav-link">Login</a>
+      </h4>
+    </nav>
+      -->
     </div>
   </div>
 </div>

@@ -1,29 +1,27 @@
 <div class="container" id="formblock">
   <h2 class="col-xs-12">Become An Influencer</h2>
-  <form (ngSubmit)="addInfluencer()" #followerForm="ngForm">
-    <label for="fname"></label>
+    <label for="firstName"></label>
       <div class="col-xs-6">
-        <input type="text" class="form-control" id="fname" required placeholder="First Name">
+        <input [(ngModel)]="influencer.firstName" type="text" class="form-control" id="firstName" required placeholder="First Name">
       </div>
     <label for="lname"></label>
       <div class="col-xs-6">
-        <input type="text" class="form-control" id="lname" required placeholder="Last Name">
+        <input [(ngModel)]="influencer.lastName" type="text" class="form-control" id="lname" required placeholder="Last Name">
       </div>
     <label for="email"></label>
       <div class="col-xs-12">
-        <input type="email" class="form-control" id="email" required placeholder="Email">
+        <input [(ngModel)]="influencer.email" type="email" class="form-control" id="email" required placeholder="Email">
+      </div>
+    <label for="username"></label>
+      <div class="col-xs-12">
+        <input [(ngModel)]="influencer.username" type="text" class="form-control" id="username" required placeholder="Username">
       </div>
     <label for="password"></label>
       <div class="col-xs-12">
-        <input type="text" class="form-control" id="password" required placeholder="Password">
-      </div>
-    <label for="password-confirm"></label>
-      <div class="col-xs-12">
-        <input type="text" class="form-control" id="password-confirm" required placeholder="Confirm Password">
+        <input [(ngModel)]="influencer.password" type="password" class="form-control" id="password" required placeholder="Password">
       </div>
     <div class="col-xs-2">
-      <button type="submit" class="btn" id="submit-btn" [disabled]="!followerForm.form.valid">Sign Up</button>
+      <button (click)="signUp()" type="submit" class="btn" id="submit-btn">Sign Up</button>
     </div>
     <div class="col-xs-10"></div>
-  </form>
 </div>

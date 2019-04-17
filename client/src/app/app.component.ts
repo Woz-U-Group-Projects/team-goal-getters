@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { FollowerService } from "./follower.service";
-import { Follower } from "./follower";
+import { InfluencerService } from "./influencer.service";
 
 @Component({
   selector: "app-root",
@@ -8,5 +8,11 @@ import { Follower } from "./follower";
   styleUrls: ["./app.component.css"]
 })
 export class AppComponent {
-  title = 'Welcome to CRMM.ME';
+  constructor(private influencerService: InfluencerService) {}
+  ngOninit() {
+    this.influencerService.validateToken().subscribe(response => {
+      console.log(response);
+      this.influencerService.loggedIn = response;
+    });
+  }
 }
