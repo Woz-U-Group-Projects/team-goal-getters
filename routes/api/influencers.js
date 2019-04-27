@@ -1,8 +1,9 @@
 var express = require("express");
 var router = express.Router();
-let InfluencerModel = require("../../models/influencer");
-const passport = require('passport');
-const connectEnsure = require('connect-ensure-login');
+var InfluencerModel = require("../../models/influencer");
+var bcrypt = require("bcryptjs");
+const jwt = require("jsonwebtoken");
+const authService = require("../../services/auth");
 
 router.get("/", function(req, res, next){
     InfluencerModel.find()
@@ -10,35 +11,90 @@ router.get("/", function(req, res, next){
         .catch(error => res.status(500).send(error));
 });
 
-// New Influencer Sign up
-router.post("/", function(req, res, next){
+// New Influencer Sign up creates a new user
+router.post("/signup", function(req, res, next){
     console.log(req.body);
-    let newInfluencer = new InfluencerModel();
-    newInfluencer.fname = req.body.fname;
-    newInfluencer.lname = req.body.lname;
-    newInfluencer.email = req.body.email;
-    newInfluencer.password = req.body.password;
-    newInfluencer.username = req.body.username;
-    newInfluencer.save()
-        .then(influencer => res.json(influencer))
-        .catch(error => res.status(400)
-        .send(error));
+    InfluencerModel.create(
+        {
+            firstName: req.body.firstName,
+            lastName: req.body.lastName,
+            email: req.body.email,
+            username: req.body.username,
+            password: req.body.password
+        },
+        function(err, result) {
+            if (err) {
+                console.log(err);
+            } else {
+                res.json("User successfully created");
+            }
+        }
+    );
 });
 
-// get route for user's dashboard
-
-router.get("/:username", function(req, res) {
- // display the influencer's dashboard which consists of
- // a list of followers
-
- let influencerUsername = req.params.username;
- res.send(`Welcome to your dashboard, ${influencerUsername}!`)
-
-
+// login user and return JWT as cookie
+// attempt to find the user by their username, if not found then respond 401 unauthorized
+router.post("/login", function(req, res) {
+    console.log(req.body);
+    InfluencerModel.findOne({ username: req.body.username }, function(err, influencerInfo) {
+      if (err) {
+        console.log("ERROR");
+        console.log(err);
+      } else {
+        console.log(influencerInfo);
+        // make sure we found a user, then compare the passwords
+        if (
+          influencerInfo &&
+          bcrypt.compareSync(req.body.password, influencerInfo.password)
+        ) {
+          let token = jwt.sign(
+            { id: influencerInfo.id, userName: influencerInfo.username },
+            "secretkey",
+            { expiresIn: "1h" }
+          );
+          res.cookie("jwt", token);
+          res.json("Login successful");
+        } else {
+          // didn't find the user, or credentials are invalid
+          res.status(401);
+          console.log("Invalid credentials");
+          res.json("Invalid credentials");
+        }
+      }
+    });
 });
 
+// find a profile from a user (their user object) based on the received jtw cookie
+router.get("/dashboard", authService.verifyUser, function(req, res, next) {
+    // authService.verifyUser attaches req.body.userId from the jtw cookie if it's valid
+    // find the user by their id
+    InfluencerModel.findById(req.body.id, function(err, influencerInfo) {
+      if (err) {
+        console.log(err);
+        res.json("Invalid credentials");
+      } else {
+        res.send(influencerInfo);
+      }
+    });
+});
 
-// influencer login
+// logout
+router.get("/logout", function(req, res, next) {
+    // set a new jwt cookie that will immediately expire
+    res.cookie("jwt", "", { expires: new Date(0) });
+    res.json("Logged out");
+  });
+  
+// validate a token
+router.get("/validateToken", authService.verifyUser, function(req, res, next) {
+    // if there is a token we return true
+    // this only happens if verifyUser is passed successfully (validates token)
+    res.json(true);
+});
+  
+
+
+/* influencer login
 
 router.post("/login", function(req, res) {
     // in post login, we want to compare the email that is in the body to
@@ -55,7 +111,18 @@ router.post("/login", function(req, res) {
         console.log("Success!")
         res.redirect(`/${influencerUsername}`)
     }
-}
-);
+}); */
+
+// get route for user's dashboard
+
+router.get("/:username", function(req, res) {
+ // display the influencer's dashboard which consists of
+ // a list of followers
+
+ let influencerUsername = req.params.username;
+ res.send('Success')
+
+
+});
 
 module.exports = router;

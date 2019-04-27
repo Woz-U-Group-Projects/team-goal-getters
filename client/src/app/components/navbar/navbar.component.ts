@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { InfluencerService } from 'src/app/influencer.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -7,8 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(private influencerService: InfluencerService, private router: Router) { }
+  
+  logout() {
+    this.influencerService.logout().subscribe(response => {
+      this.influencerService.loggedIn = false;
+      console.log("logging out");
+      this.router.navigate(["/"]);
+    });
+    return false;
+  }
+  
   ngOnInit() {
   }
 

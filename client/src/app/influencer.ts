@@ -1,8 +1,8 @@
 export class Influencer {
 
         id: number;
-        fname: string;
-        lname: string;
+        firstName: string;
+        lastName: string;
         username: string;
         email: string;
         password: string;

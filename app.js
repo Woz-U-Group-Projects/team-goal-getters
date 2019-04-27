@@ -3,8 +3,8 @@ var express = require("express");
 var path = require("path");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
-var cors = require("cors");
 var mongoose = require("mongoose");
+var cors = require("cors");
 
 var indexRouter = require("./routes/api/index");
 var followerRouter = require("./routes/api/followers");
@@ -19,7 +19,8 @@ app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(cors());
+// Important option to allow credentials
+app.use(cors({ origin: "http://localhost:4200", credentials: true }));
 
 app.use("/", indexRouter);
 app.use("/api/followers", followerRouter);

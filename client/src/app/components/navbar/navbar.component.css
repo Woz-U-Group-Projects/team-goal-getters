@@ -22,3 +22,19 @@ h4 {
 a {
     color: rgb(54, 224, 175);
 }
+
+a:hover {
+    text-decoration: none;
+    color: rgb(24, 184, 135);
+}
+
+.nav-link {
+    margin-right: 15px;
+    border: 2px solid rgb(54, 224, 175);
+    border-radius: 4px;
+    padding: 5px 12px 5px 12px;
+}
+
+.logout {
+    color: orangered;
+}
